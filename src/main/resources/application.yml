@@ -1,1 +1,17 @@
-spring.application.name=rest-spring-boot-java-example-project
+spring:
+  application:
+    name: rest-spring-boot-java-example-project
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rest_spring_boot_java?useTimeZone=true&serverTimeZone=UTC
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+logging:
+  level:
+    # root: WARN
+    com.gcorp: DEBUG
