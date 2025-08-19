@@ -1,6 +1,6 @@
 package com.gcorp.controllers;
 
-import com.gcorp.model.Person;
+import com.gcorp.data.dto.PersonDTO;
 import com.gcorp.services.PersonService;
 import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,25 +18,25 @@ public class PersonController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public Person findPersonById(@PathVariable Long id) {
+    public PersonDTO findPersonById(@PathVariable Long id) {
         return service.findPersonById(id);
     }
 
     @GetMapping
     @ResponseBody
-    public List<Person> findAll() {
+    public List<PersonDTO> findAll() {
         return service.findAll();
     }
 
     @PostMapping
     @ResponseBody
-    public Person post(@RequestBody Person person) {
+    public PersonDTO post(@RequestBody PersonDTO person) {
         return service.create(person);
     }
 
     @PutMapping
     @ResponseBody
-    public Person update(@RequestBody Person person) {
+    public PersonDTO update(@RequestBody PersonDTO person) {
         return service.update(person);
     }
 
